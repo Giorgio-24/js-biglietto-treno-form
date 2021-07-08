@@ -9,6 +9,10 @@ body{
     margin: 20px;
 }
 
-.m-bottom{
+.m-bottom-1{
+    margin-bottom: 1rem;
+}
+
+.m-bottom-2{
     margin-bottom: 2rem;
 }
