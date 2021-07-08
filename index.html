@@ -25,12 +25,14 @@
     <button id="generate-ticket" class="m-bottom-2">Genera biglietto</button>
     <button id="undo" class="m-bottom-2">Annulla</button>
     <hr>
-    <h2 class="m-bottom-1 hidden">Il tuo biglietto:</h2>
-    <div id="print-name" class="m-bottom-1 hidden"><strong>Nome passeggero:</strong></div>
-    <div id="print-discount" class="m-bottom-1 hidden"><strong>Offerta:</strong></div>
-    <div id="print-car" class="m-bottom-1 hidden"><strong>Carrozza:</strong></div>
-    <div id="print-code" class="m-bottom-1 hidden"><strong>Codice treno:</strong></div>
-    <div id="print-price" class="m-bottom-1 hidden"><strong>Prezzo del biglietto:</strong></div>
+    <div class="hidden">
+        <h2 class="m-bottom-1">Il tuo biglietto:</h2>
+        <div class="m-bottom-1"><strong>Nome passeggero: </strong><span id="print-name"></span></div>
+        <div class="m-bottom-1"><strong>Offerta: </strong><span id="print-discount"></span></div>
+        <div class="m-bottom-1"><strong>Carrozza: </strong><span id="print-car"></span></div>
+        <div class="m-bottom-1"><strong>Codice treno: </strong><span id="print-code"></span></div>
+        <div class="m-bottom-1"><strong>Prezzo del biglietto in Euro: </strong><span id="print-price"></span></div>
+    </div>
 
     <script src="./script.js"></script>
 </body>

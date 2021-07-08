@@ -15,23 +15,57 @@ Numero carrozza (randomizziamo una carrozza da 1 a 12)
 Prezzo (stampato con due decimali)
 Tariffa applicata all'utente (Tariffa minori, Tariffa ordinaria, Tariffa Over65) */
 
+//=VARIABLES.
 var passengerName = document.getElementById('passenger-name');
 
 var travelDistance = document.getElementById('travel-distance');
 
 var ageRange = document.getElementById('age-range');
 
-var printName;
+var discount = 'Tariffa ordinaria.';
 
-var printDiscount;
+var printName = document.getElementById('print-name');
 
-var printCar;
+var printDiscount = document.getElementById('print-discount');
 
-var printCode;
+var printCar = document.getElementById('print-car');
 
-var printPrice;
+var printCode = document.getElementById('print-code');
 
+var printPrice = document.getElementById('print-price');
+
+//=PRINT TICKET DETAILS.
 var generateTicketButton = document.getElementById('generate-ticket').addEventListener("click",
-    function () { alert("Hello World!"); });
+    function () {
+        passengerName = passengerName.value;
 
-var undoButton = document.getElementById('undo');
+        travelDistance = travelDistance.value;
+
+        ageRange = ageRange.value;
+
+        var ticketPrice = travelDistance * 0.21;
+
+        //?METTO UN IF PER DETERMINARE IL PREZZO SE HO UNO SCONTO.
+        if (ageRange = 'underage') {
+            ticketPrice *= 0.8;
+            discount = 'Sconto minorenne.';
+        }
+
+        if (ageRange = 'over-65') {
+            ticketPrice *= 0.6;
+            discount = 'Sconto over 65.';
+        }
+
+        //?RIEMPIO I TAG HTML CON I VALORI DEGLI IMPUT INSERITI DALL'UTENTE
+        printName.innerHTML = passengerName;
+
+        printDiscount.innerHTML = discount;
+
+        printCar.innerHTML = Math.floor(Math.random() * 12) + 1;
+
+        printCode.innerHTML = '#FG1003890TI';
+
+        printPrice.innerHTML = ticketPrice.toFixed(2);
+
+    }
+);
