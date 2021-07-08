@@ -15,3 +15,23 @@ Numero carrozza (randomizziamo una carrozza da 1 a 12)
 Prezzo (stampato con due decimali)
 Tariffa applicata all'utente (Tariffa minori, Tariffa ordinaria, Tariffa Over65) */
 
+var passengerName = document.getElementById('passenger-name');
+
+var travelDistance = document.getElementById('travel-distance');
+
+var ageRange = document.getElementById('age-range');
+
+var printName;
+
+var printDiscount;
+
+var printCar;
+
+var printCode;
+
+var printPrice;
+
+var generateTicketButton = document.getElementById('generate-ticket').addEventListener("click",
+    function () { alert("Hello World!"); });
+
+var undoButton = document.getElementById('undo');
