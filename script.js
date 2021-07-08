@@ -22,7 +22,7 @@ var travelDistance = document.getElementById('travel-distance');
 
 var ageRange = document.getElementById('age-range');
 
-var discount = 'Tariffa ordinaria.';
+var discount;
 
 var printName = document.getElementById('print-name');
 
@@ -41,19 +41,20 @@ var generateTicketButton = document.getElementById('generate-ticket').addEventLi
 
         travelDistance = travelDistance.value;
 
-        ageRange = ageRange.value;
+        ageRange += ageRange.value;
 
         var ticketPrice = travelDistance * 0.21;
 
         //?METTO UN IF PER DETERMINARE IL PREZZO SE HO UNO SCONTO.
-        if (ageRange = 'underage') {
+        if (ageRange.value = 'underage') {
             ticketPrice *= 0.8;
             discount = 'Sconto minorenne.';
-        }
-
-        if (ageRange = 'over-65') {
+        } else if (ageRange.value = 'over-65') {
             ticketPrice *= 0.6;
             discount = 'Sconto over 65.';
+        } else if (ageRange.value = 'adult') {
+            ticketPrice *= 1;
+            discount = 'Tariffa ordinaria.';
         }
 
         //?RIEMPIO I TAG HTML CON I VALORI DEGLI IMPUT INSERITI DALL'UTENTE
@@ -67,5 +68,18 @@ var generateTicketButton = document.getElementById('generate-ticket').addEventLi
 
         printPrice.innerHTML = ticketPrice.toFixed(2);
 
+        //?MOSTRO I DETTAGLI AL CLICK DEL BOTTONE.
+        var showDetails = document.getElementById('ticket-details').classList.remove("hidden");
+
+    }
+);
+
+var undoButton = document.getElementById('undo').addEventListener("click",
+    function () {
+        passengerName.value = '';
+
+        travelDistance.value = '10';
+
+        ageRange.value = 'adult';
     }
 );

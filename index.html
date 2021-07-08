@@ -18,14 +18,14 @@
     <div>Fascia d'età:
         <select name="age-range" id="age-range" class="m-bottom-2">
             <option value="underage" id="underage" class="m-bottom-2">0/17</option>
-            <option value="adult" id="adult" class="m-bottom-2">18/64</option>
+            <option value="adult" selected id="adult" class="m-bottom-2">18/64</option>
             <option value="over-65" id="over-65" class="m-bottom-2">65+</option>
         </select>
     </div>
     <button id="generate-ticket" class="m-bottom-2">Genera biglietto</button>
     <button id="undo" class="m-bottom-2">Annulla</button>
     <hr>
-    <div class="hidden">
+    <div id="ticket-details" class="hidden">
         <h2 class="m-bottom-1">Il tuo biglietto:</h2>
         <div class="m-bottom-1"><strong>Nome passeggero: </strong><span id="print-name"></span></div>
         <div class="m-bottom-1"><strong>Offerta: </strong><span id="print-discount"></span></div>
