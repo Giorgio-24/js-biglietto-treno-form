@@ -43,7 +43,7 @@ var generateTicketButton = document.getElementById('generate-ticket').addEventLi
 
         printCar.innerHTML = Math.floor(Math.random() * 12) + 1;
 
-        printCode.innerHTML = '#FG1003890TI';
+        printCode.innerHTML = '#' + parseInt(Math.floor(Math.random() * (100000 - 90000) + 90000));
 
         printPrice.innerHTML = ticketPrice.toFixed(2);
 
